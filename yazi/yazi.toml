@@ -1,0 +1,19 @@
+[opener]
+text = [
+    { run = 'nvim "%s"', block = true }
+]
+
+image = [
+    { run = 'imv "%s"', orphan = true }
+]
+
+pdf = [
+    { run = 'xdg-open "%s"', orphan = true }
+]
+
+[open]
+rules = [
+    { mime = "text/*", use = "text" },
+    { mime = "image/*", use = "image" },
+    { mime = "application/pdf", use = "pdf" },
+]
