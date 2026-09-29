@@ -1,0 +1,205 @@
+/**
+ * Gruvbox Dark Rofi Configuration
+ * Theme: Gruvbox Dark
+ **/
+
+configuration {
+    modi:                       "drun,run,filebrowser,window";
+    font:                       "Noto Sans Mono 12";
+    show-icons:                 true;
+    icon-theme:                 "Gruvbox-Plus-Dark";
+    display-drun:               " Apps";
+    display-run:                " Run";
+    display-filebrowser:        " Files";
+    display-window:             " Windows";
+    drun-display-format:        "{name}";
+    hover-select:               true;
+    me-select-entry:            "MousePrimary";
+    me-accept-entry:            "!MousePrimary";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+* {
+    background-color:           transparent;
+    text-color:                 @main-fg;
+    margin:                     0;
+    padding:                    0;
+    spacing:                    0;
+}
+
+window {
+    transparency:               "real";
+    location:                   center;
+    anchor:                     center;
+    fullscreen:                 false;
+    width:                      640px;
+    x-offset:                   0px;
+    y-offset:                   0px;
+    enabled:                    true;
+    //border:                     2px;
+    border-radius:              12px;
+    //border-color:               @main-br;
+    background-color:           @main-bg;
+    cursor:                     "default";
+}
+
+mainbox {
+    enabled:                    true;
+    spacing:                    12px;
+    padding:                    20px;
+    background-color:           transparent;
+    orientation:                vertical;
+    children:                   [ "inputbar", "message", "listview", "mode-switcher" ];
+}
+
+inputbar {
+    enabled:                    true;
+    spacing:                    10px;
+    padding:                    8px 12px;
+    border-radius:              8px;
+    background-color:           @input-bg;
+    text-color:                 @main-fg;
+    children:                   [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                    true;
+    background-color:           inherit;
+    text-color:                 @yellow;
+    font:                       "Noto Sans Mono 12";
+}
+
+entry {
+    enabled:                    true;
+    background-color:           inherit;
+    text-color:                 inherit;
+    cursor:                     text;
+    placeholder:                "Search...";
+    placeholder-color:          @gray;
+}
+
+message {
+    enabled:                    true;
+    margin:                     0px;
+    padding:                    10px;
+    border-radius:              8px;
+    background-color:           @input-bg;
+    text-color:                 @main-fg;
+}
+
+textbox {
+    background-color:           inherit;
+    text-color:                 inherit;
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
+    highlight:                  none;
+}
+
+listview {
+    enabled:                    true;
+    columns:                    1;
+    lines:                      8;
+    cycle:                      true;
+    dynamic:                    true;
+    scrollbar:                  false;
+    layout:                     vertical;
+    reverse:                    false;
+    fixed-height:               true;
+    fixed-columns:              true;
+    spacing:                    4px;
+    background-color:           transparent;
+    text-color:                 @main-fg;
+    cursor:                     "default";
+}
+
+element {
+    enabled:                    true;
+    spacing:                    12px;
+    padding:                    8px 12px;
+    border-radius:              8px;
+    background-color:           transparent;
+    text-color:                 @main-fg;
+    cursor:                     pointer;
+}
+
+element normal.normal {
+    background-color:           transparent;
+    text-color:                 @main-fg;
+}
+
+element normal.urgent {
+    background-color:           @red;
+    text-color:                 @bg0h;
+}
+
+element normal.active {
+    background-color:           @bg2;
+    text-color:                 @main-fg;
+}
+
+element selected.normal {
+    background-color:           @select-bg;
+    text-color:                 @select-fg;
+}
+
+element selected.urgent {
+    background-color:           @brightred;
+    text-color:                 @bg0h;
+}
+
+element selected.active {
+    background-color:           @brightyellow;
+    text-color:                 @bg0h;
+}
+
+element alternate.normal {
+    background-color:           transparent;
+    text-color:                 @main-fg;
+}
+
+element alternate.urgent {
+    background-color:           @red;
+    text-color:                 @bg0h;
+}
+
+element alternate.active {
+    background-color:           @bg2;
+    text-color:                 @main-fg;
+}
+
+element-icon {
+    background-color:           transparent;
+    text-color:                 inherit;
+    size:                       24px;
+    cursor:                     inherit;
+}
+
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+    highlight:                  inherit;
+    cursor:                     inherit;
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
+}
+
+mode-switcher {
+    enabled:                    true;
+    spacing:                    10px;
+    background-color:           transparent;
+    text-color:                 @main-fg;
+}
+
+button {
+    padding:                    6px 12px;
+    border-radius:              8px;
+    background-color:           @input-bg;
+    text-color:                 inherit;
+    cursor:                     pointer;
+}
+
+button selected {
+    background-color:           @select-bg;
+    text-color:                 @select-fg;
+}

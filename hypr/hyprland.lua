@@ -26,8 +26,8 @@ hl.env("WLR_DRM_NO_ATOMIC", "1")
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "yazi"
--- local menu = "wofi --show drun"
-local menu = "kitty --class gyr -e gyr"
+local menu = "rofi -show drun"
+-- local menu = "kitty --class gyr -e gyr --replace"
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -356,12 +356,6 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 --     float = true,
 -- })
 --
-hl.window_rule({
-    name = "float-gyr",
-    match = { class = "^(gyr)$" },
-    float = true,
-    center = true,
-})
 
 hl.config({
     misc = {
