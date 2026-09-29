@@ -307,7 +307,6 @@ end
 
 hl.bind("SUPER + X", hl.dsp.window.move({ workspace = "special:scratchpad" }))
 
-hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.window.fullscreen_state({ client = 0, internal = 0, action = "set" })) -- temporary fix for kitty fullscreen issue
 -- Example special workspace (scratchpad)
 -- hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("magic"))
 -- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
@@ -362,7 +361,6 @@ hl.window_rule({
     match = { class = "^(gyr)$" },
     float = true,
     center = true,
-    fullscreen = true,
 })
 
 hl.config({
