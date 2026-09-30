@@ -17,3 +17,6 @@ rules = [
     { mime = "image/*", use = "image" },
     { mime = "application/pdf", use = "pdf" },
 ]
+
+[mgr]
+sort_by = "natural"
