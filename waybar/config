@@ -16,7 +16,7 @@
         "pulseaudio#outputDevice",
         "pulseaudio#inputDevice",
         "backlight",
-        "hyprland/language",
+        "network",
         "memory",
         "power-profiles-daemon",
         "battery"
@@ -91,18 +91,23 @@
 
     "network":
     {
-        "format": "󱦳{bandwidthDownBytes} 󱦲{bandwidthUpBytes}",
-        "format-disconnected": "Disconnected",
-        "format-disabled": "Disabled",
+        "format-wifi": "{icon} 󱦳{bandwidthDownBytes} 󱦲{bandwidthUpBytes}",
+        "format-ethernet": "󰈀 󱦳{bandwidthDownBytes} 󱦲{bandwidthUpBytes}",
+        "format-linked": "󰈁 {ifname} (No IP)",
+        "format-disconnected": "󰤮 Disconnected",
+        "format-disabled": "󰤮 Disabled",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "SSID: {essid} ({signalStrength}%)\nInterface: {ifname}\nIP address: {ipaddr}\nGateway address: {gwaddr}\nSubnetmask: {netmask}",
         "tooltip-format-ethernet": "Interface: {ifname}\nIP address: {ipaddr}\nGateway address: {gwaddr}\nSubnetmask: {netmask}",
-        "tooltip-format-wifi": "SSID: {essid}\nIP address: {ipaddr}\nGateway address: {gwaddr}\nSubnetmask: {netmask}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor",
         "interval": 1
     },
 
     "cpu":
     {
         "format": " {usage}% ",
-        "interval": 1,
+        "interval": 1
     },
 
     "backlight":
@@ -129,20 +134,6 @@
         "󰃠"
             ],
             "interval": 1
-    },
-
-    "hyprland/language":
-    {
-        "format-en": "EN",
-        "format-ar": "AR",
-        "format-zh": "ZH",
-        "format-in": "HI",
-        "format-es": "ES",
-        "format-fr": "FR",
-        "format-ru": "RU",
-        "format-pt": "PT",
-        "format-bn": "BN",
-        "format-de": "DE"
     },
 
     "memory":

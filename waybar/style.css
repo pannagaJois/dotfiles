@@ -120,12 +120,23 @@
     margin-right: 4px;
     margin-left: 4px;
 
+    padding-right: 6px;
+    padding-left: 6px;
+
     border-top-left-radius: 11px;
     border-bottom-left-radius: 11px;
 
     min-width: 250px;
 
     color: #a89984;
+}
+
+#network.disconnected {
+    color: #fb4934;
+}
+
+#network.disabled {
+    color: #7c6f64;
 }
 
 #cpu {
@@ -167,20 +178,6 @@
 
 #backlight.1 {
     color: #d56d0e;
-}
-
-#language {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-right: 4px;
-    margin-left: 4px;
-
-    padding-right: 6px;
-    padding-left: 6px;
-
-    border-radius: 4px;
-
-    color: #d79932;
 }
 
 #memory {
