@@ -290,6 +290,7 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("obsidian"))
 -- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("kitty -e kew"))
 -- hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("nvim"))
 hl.bind("SUPER + O", hl.dsp.exec_cmd("~/.local/bin/ocr-select"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("~/.local/bin/sung"))
 
 -- Move focus with mainMod + A/W/S/D
 hl.bind(mainMod .. " + A", hl.dsp.focus({ direction = "left" }))
@@ -314,6 +315,9 @@ hl.bind("SUPER + X", hl.dsp.window.move({ workspace = "special:scratchpad" }))
 -- Scroll through existing workspaces with mainMod + scroll
 -- hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 -- hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 -- hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
