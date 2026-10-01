@@ -1,1 +1,1 @@
-../../docs/highlighters/line.md
+/home/jois/.zsh/zsh-syntax-highlighting/highlighters/line/../../docs/highlighters/line.md

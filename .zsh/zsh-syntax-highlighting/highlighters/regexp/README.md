@@ -1,1 +1,1 @@
-../../docs/highlighters/regexp.md
+/home/jois/.zsh/zsh-syntax-highlighting/highlighters/regexp/../../docs/highlighters/regexp.md

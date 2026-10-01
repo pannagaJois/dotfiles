@@ -1,7 +1,4 @@
 # ~/.zsh/.zshrc
-
-##########################################
-
 # Disable the cursor style feature
 # ZVM_CURSOR_STYLE_ENABLED=false
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
@@ -9,7 +6,7 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 
 # Load completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -C
 
 #######################################################
 # ZSH Basic Options
@@ -23,17 +20,16 @@ setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
 
-
 #######################################################
 # Environment Variables
 #######################################################
 # export EDITOR=nvim
 # export VISUAL=nvim
-export EDITOR=nvim visudo
-export VISUAL=nvim visudo
+export EDITOR=nvim
+export VISUAL=nvim
 export SUDO_EDITOR=nvim
 export FCEDIT=nvim
-export BROWSER=com.brave.Browser
+export BROWSER=zen-browser
 
 if [[ -x "$(command -v bat)" ]]; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -74,14 +70,13 @@ bindkey -v
 # bindkey ' ' magic-space                           # do history expansion on space
 bindkey "^[[A" history-beginning-search-backward  # search history with up key
 bindkey "^[[B" history-beginning-search-forward   # search history with down key
-bindkey -e
 
 
 #######################################################
 # History Configuration
 #######################################################
 HISTSIZE=10000
-HISTFILE=~/.zsh/.zsh_history
+HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
@@ -109,7 +104,6 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # ZSH Syntax highlighting
 #######################################################
 # source ~/.zsh/zsh-syntax-highlighting.zsh
-# source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -117,9 +111,6 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # eval functions
 #######################################################
 eval "$(fzf --zsh)" # fzf
-eval "$(thefuck --alias)" # thefu*k
-eval "$(thefuck --alias hell)" # thefu*k
-eval "$(thefuck --alias damn)" # thefu*k
 eval "$(zoxide init zsh)"
 
 
@@ -130,4 +121,12 @@ source ~/.zsh/alias.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/functions.sh
 eval "$(starship init zsh)"
-[ "$TERM" = "xterm-kitty" ] && fastfetch
+
+export NVM_DIR="$HOME/.nvm"
+
+nvm() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
+export PATH="$HOME/.cargo/bin:$PATH"

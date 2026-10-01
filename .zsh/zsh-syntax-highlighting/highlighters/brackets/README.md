@@ -1,1 +1,1 @@
-../../docs/highlighters/brackets.md
+/home/jois/.zsh/zsh-syntax-highlighting/highlighters/brackets/../../docs/highlighters/brackets.md

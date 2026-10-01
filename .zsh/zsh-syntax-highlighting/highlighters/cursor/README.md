@@ -1,1 +1,1 @@
-../../docs/highlighters/cursor.md
+/home/jois/.zsh/zsh-syntax-highlighting/highlighters/cursor/../../docs/highlighters/cursor.md
