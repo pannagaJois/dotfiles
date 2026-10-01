@@ -291,6 +291,8 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("obsidian"))
 -- hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("nvim"))
 hl.bind("SUPER + O", hl.dsp.exec_cmd("~/.local/bin/ocr-select"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("~/.local/bin/sung"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
+
 
 -- Move focus with mainMod + A/W/S/D
 hl.bind(mainMod .. " + A", hl.dsp.focus({ direction = "left" }))
@@ -365,4 +367,17 @@ hl.config({
     misc = {
         disable_splash_rendering = true,
     },
+})
+
+-- Blur the SwayNC control center and notification popups
+hl.layer_rule({
+  match = { namespace = "swaync-control-center" },
+  blur = true,
+  ignore_alpha = 0.5,
+})
+
+hl.layer_rule({
+  match = { namespace = "swaync-notification-window" },
+  blur = true,
+  ignore_alpha = 0.5,
 })
